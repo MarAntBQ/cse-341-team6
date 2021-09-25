@@ -31,10 +31,13 @@
           <% for (let user of usrs) { %>
               <article>
                   <header class="card__header">
-                      <h1 class="product__title"><%= user.userName%></h1>
+                      <h1 class="product__title"><%= user%></h1>
                   </header>    
                   <div>
+                    <form action="/ta02/removeUser" method="POST">
                       <button class="btn">Remove User</button>
+                      <input type="hidden" value="<%= user%>" name="UserToDelete">
+                    </form>
                   </div>
               </article>
           <% } %>

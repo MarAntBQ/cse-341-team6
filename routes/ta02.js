@@ -49,7 +49,18 @@ router.get('/', (req, res, next) => {
 
 // /admin/add-product => POST
 router.post('/addUser', (req, res, next) => {
-  users.push({ userName: req.body.userName });
+  const NewUser= req.body.userName;
+  users.push(NewUser);
+  res.redirect('/ta02');
+});
+
+// /admin/add-product => POST
+router.post('/removeUser', (req, res, next) => {
+  const DeleteUser = req.body.UserToDelete;
+  const index = users.indexOf(DeleteUser);
+  if (index !== -1) {
+    users.splice(index, 1);
+  }
   res.redirect('/ta02');
 });
 
