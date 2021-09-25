@@ -16,9 +16,32 @@
       </div>
     </div>
     <div class="container">
+      <form  action="/ta02/addUser" method="POST">
+        <div class="form-control">
+            <label for="userName">New user </label>
+            <input type="text" name="userName" id="userName">
+        </div>
 
+        <button class="btn" type="submit">Add User</button>
+    </form>
     </div>
 
+    <% if (usrs.length > 0) { %>
+      <div class="grid">
+          <% for (let user of usrs) { %>
+              <article>
+                  <header class="card__header">
+                      <h1 class="product__title"><%= user.userName%></h1>
+                  </header>    
+                  <div>
+                      <button class="btn">Remove User</button>
+                  </div>
+              </article>
+          <% } %>
+      </div>
+  <% } else { %>
+      <h1>No Products Found!</h1>
+  <% } %>
 
 </body>
 
