@@ -1,3 +1,6 @@
 @import url("https://framework.marbust.com/marbust-framework.css");
+* {
+  box-sizing: border-box;
+}
 
 /*# sourceMappingURL=styles.css.map */
