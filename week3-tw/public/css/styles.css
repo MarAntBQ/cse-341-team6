@@ -3,4 +3,16 @@
   box-sizing: border-box;
 }
 
+.product-box {
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(87, 70, 70, 0.6);
+}
+.product-box .image img {
+  display: block;
+  margin: 5px auto;
+  width: 100%;
+}
+
 /*# sourceMappingURL=styles.css.map */

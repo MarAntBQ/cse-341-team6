@@ -5,16 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <div class="flex-s-a">
+    <div class="flex-s-a flex-vc">
     <% for (let thing of lists) { %> 
-        <div class="product-box box-3 box-i-4 box-m-6 bpx-p-12">
+        <div class="product-box box-3 box-i-4 box-m-6 box-p-12 tac t03s hover-shadow">
             <div class="title">
-                <h1 class="product__title"><%= thing.name %></h1>
+                <h1 class="fs20px tac pt10px pb10px"><%= thing.name %></h1>
             </div>
             <div class="image">
                 <img src="<%= thing.imageUrl %>" alt="<%= thing.name %>">
+            </div>
+            <div class="text fs30px tbold">
+                <p>$<%= thing.price %></p>
             </div>
             <div class="text">
                 <p><%= thing.description %></p>

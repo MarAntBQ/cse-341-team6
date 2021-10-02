@@ -26,7 +26,7 @@ app.get('/', (req, res, next) => {
 });
 
 app.use((req, res, next) => {
-    res.status(404).render('404', {pageTitle: 'Page not Found!', SiteName: GeneralAppName, Navpath: 'Not Found'});
+    res.status(404).render('404', {pageTitle: 'Page not Found!'});
 });
 
 app.listen(3000);
