@@ -23,12 +23,20 @@ app
   // For view engine as hbs (Handlebars)
   //.engine('hbs', expressHbs({layoutsDir: 'views/layouts/', defaultLayout: 'main-layout', extname: 'hbs'})) // For handlebars
   //.set('view engine', 'hbs')
+  
   .use(bodyParser.urlencoded({ extended: false })) // For parsing the body of a POST
+  .use(
+    session({
+      secret:'my secret', 
+      resave: false, 
+      saveUninitialized: false
+  }))
   .use('/ta01', ta01Routes)
   .use('/ta02', ta02Routes)
   .use('/ta03', ta03Routes)
   .use('/ta04', ta04Routes)
   .use('/ta05', ta05Routes)
+  
 /*
   .get('/ta02', (req, res, next) => {
     // This is the primary index, always handled last.
@@ -38,6 +46,9 @@ app
     });
   })
 */
+
+
+
   .get('/', (req, res, next) => {
     // This is the primary index, always handled last.
     res.render('pages/index', {

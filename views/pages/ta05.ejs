@@ -5,14 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../stylesheets/ta05/default.css">
+    <link rel="stylesheet" href="../stylesheets/ta05/<%=style %>.css ">
 </head>
 <body>
     <header>
         <h1>Team Activity 05</h1>
     </header>
     <main>
-        <form action=""></form>
+        <form action="/ta05/changeStyle" method="post">
+            <select name="styles" id="styles">
+                <option value="style1" <% if(style == "style1"){%>selected <%}%>>style1</option>
+                <option value="style2" <% if(style == "style2"){%>selected <%}%>>style2</option>
+                <option value="style3" <% if(style == "style3"){%>selected <%}%>>style3</option>
+            </select>
+            <button type="submit">Change styles</button>
+        </form>
+        <form action="/ta05/reset" method="post"><button type="submit">Destroy</button></form>
     </main>
     <footer>
         <p>&copy; Team 06</p>
