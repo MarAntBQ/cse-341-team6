@@ -4,7 +4,7 @@
 }
 
 header {
-  background: #023047;
+  background: #FFB703;
   color: white;
   padding: 10px 10%;
   text-align: center;
@@ -17,8 +17,8 @@ main {
 footer {
   background: #8ECAE6;
   text-align: center;
-  border-top: 3px solid #023047;
+  border-top: 3px solid #FFB703;
   padding: 30px;
 }
 
-/*# sourceMappingURL=default.css.map */
+/*# sourceMappingURL=style3.css.map */

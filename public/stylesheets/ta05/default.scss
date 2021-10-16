@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+$color1: #023047;
+$color2: #219EBC;
+$color3: #FB8500;
+$color4: #FFB703;
+$color5: #8ECAE6;
+
+header {
+    background: $color1;
+    color: white;
+    padding: 10px 10%;
+    text-align: center;
+}
+main {
+    min-height: 25vh;
+}
+footer {
+    background: $color5;
+ text-align: center;
+ border-top: 3px solid $color1;
+ padding: 30px;
+}
