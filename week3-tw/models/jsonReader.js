@@ -1,25 +1,26 @@
 const fs = require('fs');
 const path = require('path');
 
-const dataPath = path.join(
-    path.dirname(require.main.filename), 
-    'data', 
-    'data.json'
+const p = path.join(
+    path.dirname(require.main.filename),
+    'data',
+    'information.json'
 );
 
-const getDataFromFile = callBack => {
-    fs.readFile(dataPath, (err, fileContent) => {
-        if(err){
-            callBack([]);
-        } else {
-            callBack(JSON.parse(fileContent));
-        }
-    })
-}
-
-module.exports = class jsonReader {
+const getDataFromFile = cb => {
     
-    static fetchAll(callBack) {
-        getDataFromFile(callBack);
+    fs.readFile(p, (err, fileContent) => {
+        if (err) {
+            cb([]);
+        } else {
+            cb(JSON.parse(fileContent));
+        }
+    });
+};
+
+module.exports = class Informations {
+    
+    static fetchAll(cb) {
+        getDataFromFile(cb);
     }
 }

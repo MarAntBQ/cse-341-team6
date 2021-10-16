@@ -1,7 +1,5 @@
 const path = require('path');
 
-const jsonReader = require('./models/jsonReader');
-
 const express = require('express');
 
 const bodyParser = require('body-parser');
@@ -15,10 +13,12 @@ app.set('views', 'views');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
+const Informations = require('./models/jsonReader');
+
 app.get('/', (req, res, next) => {
-    jsonReader.fetchAll((data) => {
-        res.render('index', {
-            lists: data,
+    Informations.fetchAll((informations) => {
+        res.render('home', {
+            lists: informations,
             pageTitle: 'Home',
             path: '/'
         });
